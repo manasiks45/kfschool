@@ -113,7 +113,7 @@ a {
   filter: brightness(0.95);
 }
 .hero {
-  position: right;
+  position: relative;
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -140,9 +140,9 @@ a {
 }
 .hero-nav .menu {
   display: flex;
-  gap: 28px;
+  gap: 14px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -642,3 +642,248 @@ body {
 .price-table thead th {
   background: var(--lav);
 }
+/* ===== HERO FIX (non-responsive indent adjustment) ===== */
+.hero {
+  display: flex;
+  align-items: center; /* vertically align text with image */
+  justify-content: space-between;
+}
+
+/* ===== HERO: fixed, clean spacing (non-responsive) ===== */
+.hero {
+  display: flex;
+  align-items: left; /* keep text vertically aligned with the boy */
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: nowrap; /* prevent wrapping/squish */
+  min-height: 520px;
+}
+
+/* Text block */
+.hero-center {
+  width: 640px; /* fixed width so it looks the same on all screens */
+  padding-top: 8px; /* gentle upward nudge without negative margins */
+  margin: 0; /* reset any old margins */
+}
+
+/* Title + subtitle tidy up */
+.hero h1 {
+  font-size: 16px; /* adjust if you want smaller/larger */
+  line-height: 1.15; /* stops letters/lines “crumbling” */
+  letter-spacing: 0.2px;
+  margin: 0 0 0px;
+  white-space: normal;
+  word-break: keep-all;
+  text-wrap: pretty; /* safe if supported; ignored otherwise */
+}
+
+.hero .subtitle {
+  max-width: 560px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+
+/* Keep the boy image stable so it doesn't shove the text */
+.hero .hero-art img {
+  height: 390px; /* lock image height */
+  width: auto;
+  display: block;
+}
+
+/* (Optional) Keep overall page width stable to avoid layout shifts */
+.container {
+  min-width: 1280px; /* fixed layout instead of responsive */
+  margin: 5 auto;
+}
+/* ===== HERO GAP FIX ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* keep items side by side */
+  gap: 20px; /* reduce spacing between image & text */
+  min-height: 520px;
+}
+
+/* Image */
+.hero .hero-art img {
+  height: 400px; /* adjust if boy looks too big/small */
+  width: 300px;
+}
+
+/* Text block */
+.hero-center {
+  max-width: 580px; /* tighten width so it hugs closer */
+  margin: 0;
+  padding: 0;
+}
+/* ===== HERO TEXT SPACING TWEAKS ===== */
+.hero h1 {
+  margin-bottom: 12px; /* space under the main title */
+}
+
+.hero .subtitle {
+  margin-bottom: 18px; /* space under the subtitle */
+}
+
+.hero-ctas {
+  margin-top: 14px; /* space above the buttons */
+  gap: 14px; /* space between the two buttons */
+}
+
+.hero-nav {
+  margin-top: 28px; /* space under the menu items */
+}
+
+.hero-nav a {
+  padding: 0 10px; /* horizontal spacing between menu links */
+}
+/* ===== HEADER & MENU SPACING FIX ===== */
+.site-header {
+  padding-top: 5; /* remove extra space above header */
+  padding-bottom: 0; /* tighten below if needed */
+}
+
+.top-bar {
+  padding: 6px 0; /* reduce vertical padding around logo/contact */
+}
+
+.hero-nav {
+  margin-top: -100; /* remove gap between top bar and menu */
+  padding: 6px 0; /* tighter menu spacing */
+}
+
+.hero-nav a {
+  padding: 4px 10px; /* reduce vertical padding inside menu items */
+}
+/* ===== HEADER FIX ===== */
+.top-bar {
+  padding: 4px 0; /* shrink logo/contact bar height */
+  margin-bottom: 0; /* remove gap under it */
+}
+
+.hero-nav {
+  margin-top: 0; /* kill the big white space above menu */
+  padding: 4px 0; /* tighten menu row */
+}
+/* ===== HEADER + MENU GAP: pin everything tight ===== */
+.site-header {
+  /* the whole header wrapper */
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.top-bar {
+  /* logo + phone row */
+  margin: 20 !important;
+  padding: 20px 0 !important;
+}
+
+.hero-nav {
+  /* the menu row */
+  margin: 0 !important; /* remove top/bottom gap */
+  padding: 6px 0 !important; /* compact height */
+}
+
+.hero-nav .menu {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px; /* shrink if you need tighter */
+}
+
+.hero-nav a {
+  white-space: nowrap;
+  padding: 2px 10px; /* vertical padding inside links */
+}
+
+/* Many pages wrap hero in a container with vertical padding */
+.container.pad-y {
+  padding-top: 0 !important; /* this is usually the hidden culprit */
+}
+
+/* ===== HERO (boy + text) spacing ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: -200px !important; /* space between boy and text; lower if needed */
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.hero-center {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 600px;
+}
+/* Show the full boy image, small on the left, never stretching */
+.hero > img {
+  position: absolute;
+  left: 24px; /* nudge from left edge */
+  bottom: 0; /* sit on the baseline */
+  height: 490px; /* your requested size */
+  width: auto !important; /* keep proportions; override any global width:100% */
+  max-width: none; /* don't cap width */
+  object-fit: contain; /* no cropping */
+  z-index: 0; /* behind the overlay/text */
+}
+
+/* Ensure text sits above the image */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+}
+/* pushes the whole overlay to the right */
+.hero-overlay {
+  padding-left: 420px;
+} /* set ≈ image width + small gap */
+.hero,
+.hero .hero-art {
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Remove any borders/shadows from hero image */
+.hero > img,
+.hero .hero-art img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* just in case */
+}
+/* ===== ARABIC (RTL) HERO FIXES ===== */
+
+/* Put the boy on the right in Arabic */
+html[lang="ar"] .hero > img {
+  left: auto;
+  right: 24px; /* nudge from the right edge */
+}
+
+/* If you used a hero-art wrapper, cover that too */
+html[lang="ar"] .hero .hero-art img {
+  left: auto !important;
+  right: 24px !important;
+}
+
+/* Move overlay/text away from the boy on the right */
+html[lang="ar"] .hero-overlay {
+  padding-left: 0;
+  padding-right: 420px; /* ≈ image width + small gap (tune 380–460px) */
+}
+
+/* (Alternative) If you only want to shift the text block, not the menu: */
+html[lang="ar"] .hero .hero-center {
+  margin-left: 0;
+  margin-right: 420px; /* tune to clear the image cleanly */
+}
+
+/* Optional: tighten header spacing for Arabic too */
+html[lang="ar"] .top-bar,
+html[lang="ar"] .hero-nav {
+  margin-top: 0 !important;
+  padding-top: 4px !important;
+}
+html[lang="ar"] .hero > img { height: 490px;px; width:auto; right:24px; left:auto; }
+
+
+
+
