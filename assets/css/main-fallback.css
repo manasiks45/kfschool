@@ -197,7 +197,7 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px 0 16px;
+  padding: 50px 0 88px;
   gap: 5px;
 }
 .badge {
@@ -206,7 +206,7 @@ a {
   font-weight: 700;
   color: #4d2a4e; /* adjust if needed */
   text-align: center;
-  margin-top: 70px;
+  margin-top: 20px;
 
   /* shadow for readability */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
@@ -726,8 +726,8 @@ body {
 }
 
 .hero-ctas {
-  margin-top: 10px; /* space above the buttons */
-  gap: 20px; /* space between the two buttons */
+  margin-top: 14px; /* space above the buttons */
+  gap: 14px; /* space between the two buttons */
 }
 
 /* REMOVED DUPLICATE .hero-nav {
@@ -944,65 +944,3 @@ img {
 /* Ensure the menu row itself has no extra margin/padding */
 /* REMOVED DUPLICATE .hero-nav{ margin-top:0 !important; padding-top:0 !important; padding-bottom:0 !important; } */
 
-/* ==== HEADER / HERO CLEAN FIX (final) ==== */
-
-/* 0) Remove earlier bad values elsewhere */
-.container{ margin:0 auto !important; }            /* fixes "5 auto" */
-.hero{ align-items:flex-start !important; }        /* replaces invalid 'left' */
-.hero{ gap:20px !important; }                      /* replaces negative gap */
-html[lang="ar"] .hero > img{ height:490px !important; } /* fixes '490px;px' */
-.hero .hero-art{ position:absolute; left:0; bottom:0; }  /* replaces 'center' */
-
-/* 1) Top bar layout: single row, with 5px breathing room at page top */
-.site-header{ padding-top:5px; }                   /* 5px above the top bar */
-
-.top-bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:5px 0;                                   /* compact vertical height */
-  flex-wrap:nowrap;                                /* prevent wrapping */
-}
-
-.brand{ margin-left:20px; }                        /* push logo to the right */
-.brand img{ height:56px; width:auto; display:block; }
-
-.top-bar .mid-rail{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  flex:1 1 auto;                                   /* gives center area room */
-  flex-wrap:nowrap;                                /* keep on one line */
-  min-width:0;
-}
-
-.right-rail{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex:0 0 auto;
-  flex-wrap:nowrap;                                /* buttons don’t drop */
-  white-space:nowrap;
-}
-
-/* 2) Hero menu spacing: 10px below top bar; keep menu tight */
-.hero-nav{
-  margin-top:10px !important;                      /* 10px between bars */
-  padding:0 !important;
-}
-.hero-nav .menu{ display:flex; gap:0; flex-wrap:nowrap; }
-.hero-nav a{ padding:2px 10px; white-space:nowrap; }
-
-/* 3) Keep hero content from sitting too low */
-.hero{
-  display:flex;
-  justify-content:flex-start;
-  min-height:490px;                                /* not too tall */
-  border-bottom:1px solid var(--border);
-}
-.hero-overlay{ padding-top:15px !important; }
-
-.hero-center{ padding:20px 0 16px; }               /* compact headline area */
-.hero .hero-art img{ height: 490px; width:auto; display:block; }
