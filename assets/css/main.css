@@ -670,8 +670,8 @@ body {
 
 /* Title + subtitle tidy up */
 .hero h1 {
-  font-size: 16px; /* adjust if you want smaller/larger */
-  line-height: 1.15; /* stops letters/lines “crumbling” */
+  font-size: 10px; /* adjust if you want smaller/larger */
+  line-height: 2; /* stops letters/lines “crumbling” */
   letter-spacing: 0.2px;
   margin: 0 0 0px;
   white-space: normal;
@@ -1074,9 +1074,9 @@ html[lang="ar"] .hero-overlay{
 
 .hero h1{
   /* size that reads well and won’t explode */
-  font-size: clamp(20px, 3.2vw, 20px) !important;
-  line-height: 1.15 !important;
-  margin: 0 0 12px !important;
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+  margin: 0 0 10px !important;
 
   /* key: ~32 characters per line → naturally ~2 lines on desktop */
   max-inline-size: 100ch !important;
