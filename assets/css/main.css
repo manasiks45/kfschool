@@ -1093,3 +1093,6 @@ html[lang="ar"] .hero-overlay{
 .badge{ margin-top: 100px !important; }
 
 .badge{ margin-right: 50px !important; }
+img {
+  border-radius: 12px;
+}
