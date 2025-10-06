@@ -235,7 +235,7 @@ a {
 .cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 5px;
 }
 .card {
   background: #fff;
@@ -944,3 +944,16 @@ img {
 /* Ensure the menu row itself has no extra margin/padding */
 /* REMOVED DUPLICATE .hero-nav{ margin-top:0 !important; padding-top:0 !important; padding-bottom:0 !important; } */
 
+
+
+/* === KFS: global 5px spacing between cards === */
+.grid { display: grid; gap: 5px; }
+/* common grid variants used around cards */
+.grid.two { gap: 5px; }
+.grid.three { gap: 5px; }
+.grid.four { gap: 5px; }
+/* cards wrappers */
+.cards { gap: 5px; }
+.cards-container { gap: 5px; }
+/* vertical fallback when cards are in a normal block flow (stacked) */
+.card + .card { margin-top: 5px; }

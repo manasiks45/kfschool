@@ -6,7 +6,7 @@
   --muted: #7a5a7c;
   --lav: #fbf7ff;
   --border: #ead8ff;
-  --shadow: 0 10px 24px rgba(59, 26, 62, 0.12);
+  --shadow: 0 10px 24px rgba(196, 179, 197, 0.12);
 }
 * {
   box-sizing: border-box;
@@ -237,7 +237,7 @@ a {
 .cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 5px;
 }
 .card {
   background: #fff;
@@ -1131,10 +1131,23 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px; /* space between cards */
+  gap: 5px; /* space between cards */
 }
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: 5px;
 }
+
+
+/* === KFS: global 5px spacing between cards === */
+.grid { display: grid; gap: 5px; }
+/* common grid variants used around cards */
+.grid.two { gap: 5px; }
+.grid.three { gap: 5px; }
+.grid.four { gap: 5px; }
+/* cards wrappers */
+.cards { gap: 5px; }
+.cards-container { gap: 5px; }
+/* vertical fallback when cards are in a normal block flow (stacked) */
+.card + .card { margin-top: 5px; }
