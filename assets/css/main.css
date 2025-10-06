@@ -1151,3 +1151,8 @@ html {
 .cards-container { gap: 5px; }
 /* vertical fallback when cards are in a normal block flow (stacked) */
 .card + .card { margin-top: 5px; }
+/* === KFS: Arabic button font enhancement === */
+#lang-ar {
+  font-size: 16px;     /* increase or decrease as you like */
+  font-weight: 700;    /* optional: make it bold */
+}
